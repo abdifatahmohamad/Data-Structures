@@ -21,3 +21,4 @@ console.log(linearSearch([2, 6, 7, 90, 103], 90));
 //Output 3
 //The time complexity: Linear: O(n)
 
+
