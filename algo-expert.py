@@ -12,3 +12,4 @@ def twoNumberSum(array, targetSum):
 					return [firstNum, secodnNum]
 	#return an empty array if we never hit the above return
 	return []
+
