@@ -1,71 +1,99 @@
 
 # Linked List is a collection/sequence of elements/nodes
 # where each element links/points to the next element which links/points the next element
-# Create a node class in a singly linked list:
-'''class SinglyLinkedListNode(object):
 
-    def __init__(self, value):
-        self.value = value
-        # Since it's singly linked list we care about next node we pointing to:
-        self.nextnode = None
-
-
-# Now we can build out Linked List as a collection of nodes:
-# Create instances of the node objects:
-a = SinglyLinkedListNode(1)
-b = SinglyLinkedListNode(2)
-c = SinglyLinkedListNode(3)
-
-# we want to link the above nodes together:
-# Assign what the next node are:
-a.nextnode = b
-b.nextnode = c
-
-# Now we can check the value from it:
-# Call the values:
-print(a.value) # prints 1
-
-# Now we can also check the node that is coming next:
-print(a.nextnode.value) # prints 2
-print(b.nextnode.value) # prints 3'''
-
-########################################################
-# Implementing Doubly Linked List Class Node:
-
-class DoublyLinkedListNode(object):
-
-    # Initialize the atrribute that we are gonna use it:
-    def __init__(self, value):
-
-        self.value = value
-        self.next_node = None
-        self.prev_node = None
+# Implementing the Node class(Sub-class of LikedList class):
+class Node:
+    # Constructor of this class:
+    def __init__(self, data=None):
+        self.data = data
+        self.next = None
 
 
+# Define a LikedList class:
+class Linked_list:
+    def __init__(self):
+        # The head node isn't gonna contain any data (None)
+        self.head = Node()
 
-# Create instance of the above node objects that can refernce next and previous values:
+    # Create a helper func that displays the current content in the node list:
+    def display(self):
+        # Create an empty of list of elements we've seen:
+        elems = []
+        cur_node = self.head
+        while cur_node.next != None:
+            cur_node = cur_node.next
+            elems.append(cur_node.data)
+        print(elems)
 
-a = DoublyLinkedListNode(1)
-b = DoublyLinkedListNode(2)
-c = DoublyLinkedListNode(3)
+    # Create a method that inserts node at the beginning/head of the current list(append):
+    def insertAtHead(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
 
-# Define the doubly linked list:
-# Setting b after a
-b.next_node = a
-a.prev_node = b
+    # Create a method that inserts node at the end/tail of the current list(append):
+    # When the ll 1st created, there is no gonna be any list, so append is gonna be first:
+    def insertAtTail(self, data):
+        # Create new node:
+        new_node = Node(data)
+        
+        # Check if the list is empty:
+        # If the list isn't contains a node:
+        if self.head is None:
+            self.head = new_node
+            return
 
-# Setting c after a
-b.next_node = c
-c.prev_node = b
+        # If the list contain a node:
+        last_node = self.head
+        # While current node is not None(empty):
+        while last_node.next:
+            last_node = last_node.next
+        # While next_node is not None, insert new_node:
+        # Append the node to the tail/end of the list:
+        last_node.next = new_node
 
-# Now we can check the value from it:
-# Call the values:
-# print(a.value) # prints 1
+    # Create a function the calculates the length of the node:
+    def length(self):
+        cur = self.head
+        total_seen = 0
+        while cur.next != None:
+            total_seen += 1
+            # Traversing to the next node:
+            cur = cur.next
+        return total_seen
 
-# Now we can also check the node that is coming next:
-print(b.next_node.value) # prints 3
-print(c.prev_node.value) # prints 2
+    # Create a func that gets the certain index in the node:
+    def get(self, index):
+        # Check if the index is not out of the range of the Linked_list:
+        if index >= self.length() or index < 0:
+            print('ERROR: "Get" Index out of the range!')
+            return None
 
-#########################################################
+        cur_idx = 0
+        cur_node = self.head
+        while True:
+            cur_node = cur_node.next
+            if cur_idx == index:
+                return cur_node.data
+            cur_idx += 1
+
+
+
+# Create an instance of out Liked_list:
+llist = Linked_list()
+llist.display()  # Prints the list is empty
+llist.insertAtTail(1)
+llist.insertAtTail(2)
+llist.insertAtTail(3)
+llist.insertAtTail(4)
+llist.insertAtTail(5)
+llist.display()  # Prints [2, 3, 4, 5]
+print(f'The length of this node is: {llist.length()}')  # Prints 'The length of this node is: 4'
+print(f'Element at Nth index is: {llist.get(0)}')
+
+####################################################################################################################################
+
+
 
 
