@@ -4,7 +4,7 @@
 
 # Implementing the Node class(Sub-class of LikedList class):
 class Node:
-    # Constructor of this class:
+    # Constructor the Node object:
     def __init__(self, data=None):
         self.data = data
         self.next = None
