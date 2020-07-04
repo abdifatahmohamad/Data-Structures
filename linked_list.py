@@ -77,6 +77,28 @@ class Linked_list:
             if cur_idx == index:
                 return cur_node.data
             cur_idx += 1
+            
+    
+    # Deletes the node at index 'index'.
+    def erase(self, index):
+        if index >= self.length() or index < 0:
+            print("ERROR: 'Get' Index out of range!")
+            return None
+
+        cur_idx = 0
+        cur_node = self.head
+
+        while cur_node:
+            # Here we need to make sure when we delete a certain node(3 for exaple), we have to make the prev node(2) points to the next node(4)
+            last_node = cur_node
+            cur_node = cur_node.next
+            # Check if we are at the index that user provided:
+            if cur_idx == index:
+                # Erase the current node (Change the pointer):
+                last_node.next = cur_node.next
+                return
+            # If we aren't at the index that user provided:
+            cur_idx += 1        
 
 
 
@@ -88,9 +110,11 @@ llist.insertAtTail(2)
 llist.insertAtTail(3)
 llist.insertAtTail(4)
 llist.insertAtTail(5)
-llist.display()  # Prints [2, 3, 4, 5]
+llist.display()  # Prints [1, 2, 3, 4, 5]
 print(f'The length of this node is: {llist.length()}')  # Prints 'The length of this node is: 4'
 print(f'Element at Nth index is: {llist.get(0)}')
+llist.erase(2) # Takes the 2nd index and delete it from the list:
+llist.display() # Prints [1, 2, 4, 5]
 
 ####################################################################################################################################
 
