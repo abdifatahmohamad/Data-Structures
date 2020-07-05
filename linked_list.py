@@ -1,4 +1,4 @@
-
+# Implementing linked list class:
 class Node:
     def __init__(self, data):
         self.data = data
