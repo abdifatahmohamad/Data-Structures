@@ -20,6 +20,14 @@ class Linked_list:
             curr_node = curr_node.next
         print()
 
+    def length(self):
+        curr_node = self.head
+        total = 0
+        while curr_node.next is not None:
+            total += 1
+            curr_node = curr_node.next
+        return total    
+
     def insert_head(self, data):
         new_node = Node(data)
         new_node.next = self.head
@@ -49,6 +57,9 @@ llist.insert_head(4)
 # llist.insert_tail(2)
 # llist.insert_tail(3)
 # llist.insert_tail(6)
+
+# To print the length of my array:
+print(llist.length())
 
 # To display/print our LikedList
 llist.print_list()
