@@ -4,7 +4,6 @@ class My_array:
         self.length = 0
         self.data = {}
 
-    # Access array (Grab the data from memory)
     def __str__(self):
         return str(self.__dict__)
 
