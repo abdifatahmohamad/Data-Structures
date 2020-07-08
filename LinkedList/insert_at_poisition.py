@@ -17,24 +17,29 @@ class Linked_list:
             print(curr_node.data, end=' -> ')
             curr_node = curr_node.next
 
-    def insert_head(self, data):
+    def insert_tail(self, data):
         new_node = Node(data)
-        new_node.next = self.head
-        self.head = new_node
+        if self.head is None:
+            self.head = new_node
+            return
+        last_node = self.head
+        while last_node.next is not None:
+            last_node = last_node.next
+        last_node.next = new_node        
 
-    # Insert at this location (index) to this value(value) into the list:
-    def insert(self, position, data):
-        if position == 0:
-            self.insert_head(data)
 
-        i = 0
+    def insertAtPosition(self, position, data):
+        if position == 1:
+            new_node = Node(data)
+            new_node.next = self.head
+            self.head = new_node
+        i = 1
         curr_node = self.head
-        while (curr_node is not None) and (i < position -1):
+        while (curr_node is not None) and (i < position - 1):
             curr_node = curr_node.next
             i += 1
-
         if curr_node is None:
-            print('Invalid position')
+            print("Index out of bound")
         else:
             new_node = Node(data)
             new_node.next = curr_node.next
@@ -45,11 +50,11 @@ class Linked_list:
 
 llist = Linked_list()
 
-llist.insert_head(6)
-llist.insert_head(5)
-llist.insert_head(4)
-llist.insert_head(2)
-llist.insert_head(1)
+llist.insert_tail(1)
+llist.insert_tail(2)
+llist.insert_tail(4)
+llist.insert_tail(5)
+llist.insert_tail(6)
 
-llist.insert(2, 3)
+llist.insertAtPosition(2, 3)
 llist.print_list() # Output: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 
