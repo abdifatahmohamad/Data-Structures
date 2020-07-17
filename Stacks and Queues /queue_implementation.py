@@ -9,7 +9,7 @@ class Queue(object):
         # Insert takes index and the item you wanna insert:
         self.items.insert(0, item)
 
-    # Check if the stack is empty:
+    # Check if the queue is empty:
     def isEmpty(self):
         return self.items == []
 
@@ -17,23 +17,23 @@ class Queue(object):
     def dequeue(self):
         return self.items.pop()
 
-    # Return the top most element of the stack:
+    # Return the top most element of the queue:
     def peek(self):
         if not self.isEmpty():
             # # return self.items[-1]
             return self.items[len(self.items) - 1]
 
 
-    # Print stack list in Stack object:
+    # Print queue list in Stack object:
     def get_stack(self):
         return self.items
 
-    # Get the length of the stack list:
+    # Get the length of the queue list:
     def size(self):
         return len(self.items)
 
 
-# Define our stack object:
+# Define our queue object:
 queue = Queue()
 
 print(queue.isEmpty()) # True
@@ -47,11 +47,11 @@ queue.enqueue('B') # Output: ['B', 2, True, 'A', 1]
 
 print(queue.size()) # It gives me 5 coz my list contains 5 items
 
-print(queue.isEmpty()) # It will return False coz I push it some items in the stack
+print(queue.isEmpty()) # It will return False coz I push it some items in the queue
 
 # Pop an item from the stack:
 queue.dequeue() # it will remove 1 from the stack
 
-print(queue.peek()) # It will return A coz it's the top most element of the stack
+print(queue.peek()) # It will return A coz it's the top most element of the queue
 
-print(queue.get_stack()) # Prints my stack object
+print(queue.get_stack()) # Prints my queue object
