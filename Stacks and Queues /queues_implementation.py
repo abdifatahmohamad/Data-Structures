@@ -25,7 +25,7 @@ class Queue(object):
 
 
     # Print queue list in Stack object:
-    def get_stack(self):
+    def get_queue(self):
         return self.items
 
     # Get the length of the queue list:
@@ -54,4 +54,4 @@ queue.dequeue() # it will remove 1 from the stack
 
 print(queue.peek()) # It will return A coz it's the top most element of the queue
 
-print(queue.get_stack()) # Prints my queue object
+print(queue.get_queue()) # Prints my queue object
