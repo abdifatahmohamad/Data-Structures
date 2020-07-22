@@ -10,7 +10,7 @@ tar = 28
 print(linear_search(num, tar))
 
 #################################################################################
-# Finding element in Binary Search iteratively:
+# Finding element in Binary Search iteratively: O(log(n)) time | O(1) space
 def binary_search(data, target):
     left = 0
     right = len(data) - 1
@@ -30,7 +30,7 @@ print(binary_search(num, tar))
 
 
 #################################################################################
-# Finding element in Binary Search recursively:
+# Finding element in Binary Search recursively: O(log(n)) time | O(log(n)) space
 def binary_search_recursively(data, target, left, right):
     if left > right:
         return False
