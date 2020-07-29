@@ -9,6 +9,7 @@ num = [2, 3, 5, 7, 8, 9, 12, 14, 17, 19, 22, 25, 27, 28, 33, 33]
 tar = 28
 print(linear_search(num, tar))
 
+# Changed something
 #################################################################################
 # Finding element in Binary Search iteratively: O(log(n)) time | O(1) space
 def binary_search(data, target):
