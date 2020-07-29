@@ -28,7 +28,6 @@ num = [2, 3, 5, 7, 8, 9, 12, 14, 17, 19, 22, 25, 27, 28, 33, 33]
 tar = 28
 print(binary_search(num, tar))
 
-
 #################################################################################
 # Finding element in Binary Search recursively: O(log(n)) time | O(log(n)) space
 def binary_search_recursively(data, target, left, right):
