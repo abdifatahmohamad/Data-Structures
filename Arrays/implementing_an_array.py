@@ -23,6 +23,7 @@ class My_array:
     # Some operations in arrays are O(n) Time:
     # Create a delete method in the arrays:
     def delete(self, index):
+        # self.data[index] is the item we wanna delete
         item = self.data[index]
         # In array, to del items and shift the index of all the other data types by one
         # we need to create function/method that does shifting of data for us
@@ -31,6 +32,7 @@ class My_array:
     # Create shift items method:
     def shift_items(self, index):
         for i in range(index,self.length-1):
+            # Shifting items to the left by one: [0, 1, 2] = []
             self.data[i] = self.data[i + 1]
         # The very last item in the array(below) still exists
         # where we shifted over by one and we never touch it
