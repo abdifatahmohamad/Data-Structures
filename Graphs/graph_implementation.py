@@ -2,7 +2,6 @@
 # Implementing Undirected, Unweighted cyclic Graph using Python class:
 # Here is the Graph: https://visualgo.net/en/graphds
 
-
 class Graph:
     def __init__(self):
         self.numberOfNodes = 0
