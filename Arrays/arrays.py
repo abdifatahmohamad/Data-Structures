@@ -6,7 +6,6 @@ print(strings[2])
 #push  
 strings.append('e')      # O(1)
 #pop  
-strings.pop() 
 strings.pop()            # O(1)
 
 #addfirstelement 
