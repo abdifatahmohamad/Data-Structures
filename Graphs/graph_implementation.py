@@ -25,7 +25,6 @@ class Graph:
                 print(i, end=' ')
             print()
 
-
 myGraph = Graph()
 myGraph.addVertex('0')
 myGraph.addVertex('1')
