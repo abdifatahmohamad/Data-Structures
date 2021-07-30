@@ -1,4 +1,4 @@
-# Sorting a list in python without the sorted function
+# Sorting a list in python without sorted function
 
 arr = [5, 2, 4, 1]
 for i in range(len(arr)):
