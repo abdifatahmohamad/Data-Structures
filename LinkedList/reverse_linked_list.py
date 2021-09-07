@@ -83,8 +83,7 @@ def reverse(head: ListNode) -> ListNode:
         curr.next = prev
         prev = curr
         curr = temp
-    head = prev
-    return head
+    return prev
 
 node = ListNode(1)
 node.next = ListNode(2)
