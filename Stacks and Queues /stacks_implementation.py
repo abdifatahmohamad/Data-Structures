@@ -43,13 +43,13 @@ stack.push(True)
 stack.push(2)
 stack.push('B') # Output: [1, 'A', True, 2, 'B']
 
-print(stack.size()) # It gives me 5 coz my list contains 5 items
+print(stack.size()) 
 
-print(stack.isEmpty()) # It will return False coz I push it some items in the stack
+print(stack.isEmpty()) 
 
 # Pop an item from the stack:
 stack.pop() # it will remove ['B'] from the stack
 
 print(stack.peek()) # It will return 2 coz it's the top most element of the stack
 
-print(stack.get_stack()) # Prints my stack object 
+print(stack.get_stack()) 
