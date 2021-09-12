@@ -58,7 +58,7 @@ llist.insert_head(4)
 # llist.insert_tail(6)
 
 # Reverse the whole list:
-llist.reverse() # It will reverse when inserted from from like this: 1 -> 2 -> 3 -> 4 ->
+llist.reverse() # It will reverse the list when inserted from the head like this: 1 -> 2 -> 3 -> 4 ->
 
 # To display/print our LikedList
 llist.print_list()
@@ -83,8 +83,7 @@ def reverse(head: ListNode) -> ListNode:
         curr.next = prev
         prev = curr
         curr = temp
-    head = prev
-    return head
+    return prev
 
 node = ListNode(1)
 node.next = ListNode(2)
