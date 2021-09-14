@@ -8,8 +8,8 @@ class Stack:
     def __init__(self, length):
         # Three ways to create an empty list:
         # One:
+        self.__S = [0] * length
         self.__length = length
-        self.__S = [0] * self.__length
 
         # Two:
         # self.__length = length
@@ -39,7 +39,28 @@ class Stack:
         else:
             self.__S[self.__top] = x
 
-    # Print stack using string representation
+    def pop(self) -> None:
+        """
+        :return: element that is removed from stack otherwise raise exception
+        """
+        if self.is_empty():
+            raise Exception("Stack is empty")
+        else:
+            stack_top = self.__S[self.__top]
+            self.__S[self.__top] = 0
+            self.__top -= 1
+            return stack_top
+
+    def peek(self) -> str:
+        """
+        :return: get the last element on the stack
+        """
+        if self.is_empty():
+            raise Exception("Stack is empty")
+        else:
+            return f"The top element of the stack is: {self.__S[self.__top]}"
+
+     # Print stack using string representation
     def __str__(self) -> str:
         print("Printing stack.")
         # Without list comprehension
@@ -58,26 +79,6 @@ class Stack:
     #         print(item, end=" ")
     #     print()
 
-    def pop(self) -> None:
-        """
-        :return: element that is removed from stack otherwise raise exception
-        """
-        if self.is_empty():
-            raise Exception("Stack is empty")
-        else:
-            self.__S[self.__top] = 0
-            self.__top -= 1
-            return self.__S[self.__top]
-
-    def peek(self) -> str:
-        """
-        :return: get the last element on the stack
-        """
-        if self.is_empty():
-            raise Exception("Stack is empty")
-        else:
-            return f"The top element of the stack is: {self.__S[self.__top]}"
-
 
 if __name__ == '__main__':
     stack = Stack(10)
@@ -92,8 +93,6 @@ if __name__ == '__main__':
 
     print(stack)
     print(stack.peek())
-
-    # stack.print_lilength
 
 ##########################################################
 
