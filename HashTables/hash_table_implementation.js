@@ -13,6 +13,7 @@ const hash = (key, size) => {
 class HashTable{
     constructor(){
         this.size = 20;
+        // Create array size of 20
         this.buckets = Array(this.size);
 
         // Store hashMapsh using ES6 maps
