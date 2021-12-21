@@ -1,3 +1,5 @@
+# DFS based implementation
+
 class TreeNode:
     def __init__(self, val) -> None:
         self.val = val
@@ -7,12 +9,37 @@ class TreeNode:
 
 def inorder_traversal(root):
     # Base case:
-    if root is None:
-        return
+    # if root is None:
+    #     return
+    #
+    # inorder_traversal(root.left)
+    # print(root.val, end=" ")
+    # inorder_traversal(root.right)
 
-    inorder_traversal(root.left)
-    print(root.val, end=" ")
-    inorder_traversal(root.right)
+    # Iterative solution
+    # current =  root
+    # stack, result = [], []
+    # while current is not None or stack != []:
+    #     while current is not None:
+    #         stack.append(current)
+    #         current = current.left
+    #     current = stack.pop()
+    #     result.append(current.val)
+    #     current = current.right
+    # return result
+
+    # Iterative solution
+    stack, result = [], []
+    while stack or root:
+        if root is not None:
+            stack.append(root)
+            root = root.left
+        else:
+            tempNode = stack.pop()
+            result.append(tempNode.val)
+            root = tempNode.right
+
+    return result
 
 
 #                1
@@ -36,5 +63,5 @@ tree.right.right = TreeNode(7)
 tree.left.right.right = TreeNode(8)
 tree.right.right.right = TreeNode(9)
 
-inorder_traversal(tree)
+print(inorder_traversal(tree))
 print()
