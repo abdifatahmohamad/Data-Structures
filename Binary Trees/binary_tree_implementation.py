@@ -16,6 +16,20 @@ def inorder_traversal(root):
     # print(root.val, end=" ")
     # inorder_traversal(root.right)
 
+    # Recursive  solution populating array:
+    result = []
+    inorder_traversal_util(root, result)
+    return result
+
+
+def inorder_traversal_util(root, result):
+    # Base case:
+    if root is None:
+        return
+    inorder_traversal_util(root.left, result)
+    result.append(root.val)
+    inorder_traversal_util(root.right, result)
+
     # Iterative solution
     # current =  root
     # stack, result = [], []
