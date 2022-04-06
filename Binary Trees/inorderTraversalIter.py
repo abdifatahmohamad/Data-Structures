@@ -11,6 +11,7 @@ class TreeNode:
 
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        # https://www.youtube.com/watch?v=QxFOR8sQuB4&t=517s
         stack, result = [], []
         while stack or root:
             if root is not None:
