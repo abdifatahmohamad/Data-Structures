@@ -1,17 +1,27 @@
-# Implementing Queue class:
+from collections import deque
 
+
+# Queue is FIFO (first in first out)
 class Queue(object):
     def __init__(self):
-        self.items = []
+        # 1. Queue using a list
+        # self.items = []
 
-    # Insert items to the list
-    def enqueue(self, item):
-        # Insert takes index and the item you wanna insert:
-        self.items.insert(0, item)
+        # 2. Queue using double ended queue using deque built-in
+        self.items = deque()
 
-    # Check if the queue is empty:
-    def isEmpty(self):
-        return self.items == []
+    def is_empty(self):
+        # return self.items == [] If we were to use list implementation method
+
+        return len(self.items) == 0
+
+    # Insert/append items to the list
+    def enqueue(self, val):
+        # 1. Queue using a list -> Insert takes index and the item you wanna insert:
+        # self.my_queue.insert(0, val)
+
+        # 2. Queue using double ended queue using deque built-in
+        self.items.appendleft(val)
 
     # Pop item from the list:
     def dequeue(self):
@@ -19,39 +29,40 @@ class Queue(object):
 
     # Return the top most element of the queue:
     def peek(self):
-        if not self.isEmpty():
-            # # return self.items[-1]
+        if not self.is_empty():
+            # return self.items[-1]
+
             return self.items[len(self.items) - 1]
-
-
-    # Print queue list in Stack object:
-    def get_queue(self):
-        return self.items
 
     # Get the length of the queue list:
     def size(self):
         return len(self.items)
 
+    # Print queue using string representation
+    def __str__(self):
+        return f"My queue: {self.items}"
+
 
 # Define our queue object:
 queue = Queue()
 
-print(queue.isEmpty()) # True
+print(queue.is_empty())  # True
 
 # Push different data types of items
 queue.enqueue(1)
 queue.enqueue('A')
 queue.enqueue(True)
 queue.enqueue(2)
-queue.enqueue('B') # Output: ['B', 2, True, 'A', 1]
+queue.enqueue('B')  # Output: ['B', 2, True, 'A', 1]
 
-print(queue.size()) # It gives me 5 coz my list contains 5 items
+print(queue.size())  # It gives me 5 coz my list contains 5 items
 
-print(queue.isEmpty()) # It will return False coz I push it some items in the queue
+# It will return False coz I push it some items in the queue
+print(queue.is_empty())
 
-# Pop an item from the stack:
-queue.dequeue() # it will remove 1 from the stack
+# Pop an item from the queue:
+queue.dequeue()  # it will remove 1 from the queue
 
-print(queue.peek()) # It will return A coz it's the top most element of the queue
+print(queue.peek())  # It will return A coz it's the top most element of the queue
 
-print(queue.get_queue()) # Prints my queue object
+print(queue)
