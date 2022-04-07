@@ -25,10 +25,14 @@ class Queue(object):
 
     # Pop item from the list:
     def dequeue(self):
+        if len(self.items) == 0:
+            print("Queue is empty")
+            return
+
         return self.items.pop()
 
-    # Return the top most element of the queue:
-    def peek(self):
+    # Return the front element of the queue:
+    def front(self):
         if not self.is_empty():
             # return self.items[-1]
 
