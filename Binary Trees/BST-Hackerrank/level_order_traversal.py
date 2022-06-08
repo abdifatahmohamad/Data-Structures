@@ -25,14 +25,12 @@ class TreeNode:
                     else:
                         curr.left = Node(data)
                         break
-                elif data > curr.val:
+                if data > curr.val:
                     if curr.right:
                         curr = curr.right
                     else:
                         curr.right = Node(data)
                         break
-                else:
-                    break
 
     def level_order(self, root):
         queue = collections.deque()
