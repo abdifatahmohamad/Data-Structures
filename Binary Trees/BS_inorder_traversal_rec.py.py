@@ -1,3 +1,6 @@
+import collections
+
+
 class TreeNode(object):
     def __init__(self, val):
         self.val = val
@@ -33,6 +36,7 @@ def path_finder_helper(root, cur_val):
         return
 
     cur_val += str(root.val) + " -> "
+    # cur_val += (" —> " if cur_val else "\n") + str(root.val)
     if root.left is None and root.right is None:
         print(cur_val, "None")
 
@@ -51,6 +55,30 @@ def sum_path_helper(root, lst, curSum):
 
     sum_path_helper(root.left, lst, curSum)
     sum_path_helper(root.right, lst, curSum)
+
+
+# https://leetcode.com/problems/sum-root-to-leaf-numbers/
+def sumNumbers(root) -> int:
+    res = []
+    if not root:
+        return res
+
+    stack = collections.deque()
+    stack.append([root, ""])
+    while stack:
+        curr, path = stack.pop()
+        path += str(curr.val)
+
+        if not curr.left and not curr.right:
+            res.append(int(path))
+
+        if curr.right:
+            stack.append((curr.right, path))
+
+        if curr.left:
+            stack.append((curr.left, path))
+
+    return sum(res)
 
 
 def build_tree():
