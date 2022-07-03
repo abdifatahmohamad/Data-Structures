@@ -31,5 +31,11 @@ The difference being that in an increasing sequence, for x(n) and x(n+1), x(n+1)
 1,1,1,1 is a non-decreasing sequence but isn't an increasing sequence.
 
 ------------------------------------------------------------------------
+Descending vs Non-ascending:
+Descending = [5,4,3,2,1]
+non-assending = [5,5,5,4,3,2,2,2,1]
+
+------------------------------------------------------------------------
 
 '''
+
