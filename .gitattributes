@@ -6,4 +6,4 @@
 *.xml linguist-detectable=false 
 
 
-**/.idea
+.idea/
