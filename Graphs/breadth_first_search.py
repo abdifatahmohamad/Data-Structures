@@ -12,7 +12,7 @@ class Graph:
 
     def print_graph(self) -> None:
         for node in self.adjacency:
-            print(f'{node}, {self.adjacency[node]}')
+            print(f'{node} -> {self.adjacency[node]}')
 
     # Print using string representation
     # def __str__(self):
@@ -36,10 +36,14 @@ board = [
     [2, 0]
 ]
 
-grid = [['A', 'B'], ['A', 'D'],
-        ['B', 'F'], ['B', 'G'],
-        ['C', 'F'], ['C', 'E'],
-        ['D', 'C'], ['D', 'E']
+# grid = [['A', 'B'], ['A', 'D'],
+#         ['B', 'F'], ['B', 'G'],
+#         ['C', 'F'], ['C', 'E'],
+#         ['D', 'C'], ['D', 'E']
+#         ]
+
+grid = [['A', 'B'], ['A', 'E'],
+        ['B', 'C'], ['B', 'D'],
         ]
 
 g = Graph()
@@ -50,3 +54,4 @@ g.BFS('A')
 print("\n---------------------------")
 print("BFS: ", end=" ")
 g.BFS(0)
+
