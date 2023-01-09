@@ -30,6 +30,23 @@ class TreeNode(object):
 #     res.append(root.val)
 #     inorder_traversal_util(root.right, res)
 
+'''
+# Solution using helper funtion and without needing self for the helper.
+class Solution:
+    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        res = []
+        helper(root, res)
+        return res
+
+def helper(root, res):
+    if not root:
+        return []
+
+    res.append(root.val)
+    helper(root.left, res)
+    helper(root.right, res)
+
+''' 
 
 def build_tree():
     tree = TreeNode(5)
